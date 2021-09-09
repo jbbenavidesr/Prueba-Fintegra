@@ -5,7 +5,7 @@ let pkg = require("./package.json");
 // Configs
 let configs = {
     name: "PruebaFintegra",
-    files: ["main.scss"],
+    files: ["main.scss", "cruz.scss"],
     pathIn: "src/scss",
     pathOut: "dist/css",
     indentType: "tab",

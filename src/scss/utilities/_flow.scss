@@ -1,0 +1,8 @@
+/** 
+ * FLOW is a Utility designed to space things appropriately
+ */
+.flow {
+    > * + * {
+        margin-top: var(--flow-space, 1em);
+    }
+}

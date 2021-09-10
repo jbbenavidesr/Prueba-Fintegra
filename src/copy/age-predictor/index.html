@@ -10,22 +10,33 @@
     <body>
         <header>
             <div class="wrapper">
-                <h1>Predictor de edad</h1>
+                <h1><a href="/age-predictor/"> Predictor de edad</a></h1>
                 <p>
                     Está es una pequeña aplicación para predecir la edad de una
                     persona a partir de su nombre.
                 </p>
             </div>
+            <hr />
         </header>
-        <main>
+        <main class="flow">
             <div class="wrapper">
-                <form data-app="age" data-names="1">
-                    <div>
-                        <label for="name">Nombre</label>
-                        <input type="text" name="name" id="name" />
-                    </div>
-                    <button class="btn">Calcular edad</button>
-                </form>
+                <p>
+                    Haciendo uso de los servicios de
+                    <a href="https://agify.io/">agify.io</a>, esta aplicación
+                    predice la edad de una persona a partir de su nombre.
+                </p>
+                <p>
+                    Al hacer click en el botón al final de esta página, accederá
+                    a un formulario en el que puede poner uno o más nombres
+                    separados por comas. Si lo desea, puede también añadir un
+                    código de país para hacer más precisa la predicción. Al
+                    enviar el formulario, tendrá a su disposición una lista en
+                    la que se indiquan los nombres que mandó y sus respectivas
+                    edades. ¡Espero que sea de su agrado!
+                </p>
+                <a href="/age-predictor/predict/" class="btn"
+                    >Seguir al formulario...
+                </a>
             </div>
         </main>
 

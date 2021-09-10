@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>App - Predictor de edad</title>
+        <link rel="stylesheet" href="/css/main.min.css" />
+    </head>
+    <body>
+        <header>
+            <div class="wrapper">
+                <h1>
+                    <a href="/age-predictor/"> Predictor de edad</a>
+                </h1>
+                <p>
+                    Está es una pequeña aplicación para predecir la edad de una
+                    persona a partir de su nombre.
+                </p>
+            </div>
+            <hr />
+        </header>
+        <main>
+            <div class="wrapper">
+                <form data-app="form">
+                    <div>
+                        <label for="names">Nombres</label>
+                        <input type="text" name="names" id="names" />
+                    </div>
+                    <div data-select="countries">
+                        <label for="country">País</label>
+                        <input type="text" name="country" id="country" />
+                    </div>
+                    <button class="btn">Calcular edad</button>
+                </form>
+                <hr />
+            </div>
+            <div class="wrapper">
+                <article data-app="results" aria-live="polite"></article>
+            </div>
+        </main>
+
+        <script src="/js/main.min.js" defer></script>
+    </body>
+</html>

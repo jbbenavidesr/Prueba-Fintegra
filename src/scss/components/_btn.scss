@@ -1,0 +1,31 @@
+/**
+ * Primary buttons
+ */
+.btn {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    color: var(--color-white);
+    display: inline-block;
+    font-size: 0.9375em;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-right: 0.3125em;
+    margin-bottom: 0.3125em;
+    padding: 0.5em 0.6875em;
+    text-decoration: none;
+    white-space: normal;
+
+    &,
+    &:focus,
+    &:visited {
+        color: var(--color-white);
+    }
+
+    &:hover,
+    &:active {
+        background-color: var(--color-primary-dark);
+        border-color: var(--color-primary-dark);
+        color: var(--color-white);
+        text-decoration: none;
+    }
+}

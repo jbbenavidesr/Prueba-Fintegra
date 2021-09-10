@@ -1,8 +1,5 @@
-import handleAgeRequest from "./components/handleAgeRequest";
+import handleFormSubmit from "./components/handleFormSubmit";
 
-let test = {
-    names: ["Juan", "Alejandro", "Marcelo", "Lina"],
-    country: "CO",
-};
+let form = document.querySelector('[data-app="form"]');
 
-handleAgeRequest(test);
+form.addEventListener("submit", handleFormSubmit);

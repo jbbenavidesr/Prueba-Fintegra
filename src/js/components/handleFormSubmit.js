@@ -15,20 +15,27 @@ function handleFormSubmit(event) {
         .map(function (name) {
             return name.trim();
         });
-
-    let country = countries.find(function (item) {
-        return formdata.get("country") === item.Country;
-    })["ISO Code"];
-
+    let country;
+    if (formdata.get("country")) {
+        country = countries.find(function (item) {
+            return formdata.get("country") === item.Country;
+        })?.ISOCode;
+    }
     let data = { names, country };
 
     let results = document.querySelector('[data-app="results"]');
 
     results.textContent = "Calculando la edad...";
 
-    handleAgeRequest(data).then(function (response) {
-        renderAges(response, results);
-    });
+    handleAgeRequest(data)
+        .then(function (response) {
+            renderAges(response, results);
+        })
+        .catch(function (error) {
+            results.textContent =
+                "Tuvimos problemas en nuestros cálculos, por favor intenta más tarde.";
+            console.warn(error);
+        });
 }
 
 export default handleFormSubmit;

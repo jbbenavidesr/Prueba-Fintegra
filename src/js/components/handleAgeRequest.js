@@ -25,9 +25,8 @@ function handleAgeRequest(data) {
     if (!data || !data.names) throw "Los datos enviados no son validos.";
 
     let query = buildQueryString(data);
-    console.log(query);
 
-    fetch("https://api.agify.io?" + query)
+    return fetch("https://api.agify.io?" + query)
         .then(function (response) {
             if (!response.ok) throw response;
             return response.json();

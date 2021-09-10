@@ -3,11 +3,6 @@
  */
 const countries = [
     {
-        ISOCode: "*",
-        Country: "All",
-        Rows: "114.541.298",
-    },
-    {
         ISOCode: "FR",
         Country: "France",
         Rows: "15.790.461",

@@ -24,12 +24,19 @@
             <div class="wrapper">
                 <form data-app="form">
                     <div>
-                        <label for="names">Nombres</label>
+                        <label for="names">
+                            Nombres (Si es más de uno, separalos con comas)
+                        </label>
                         <input type="text" name="names" id="names" />
                     </div>
-                    <div data-select="countries">
-                        <label for="country">País</label>
-                        <input type="text" name="country" id="country" />
+                    <div>
+                        <label for="country">País (En inglés)</label>
+                        <input
+                            type="text"
+                            name="country"
+                            id="country"
+                            data-list="countries"
+                        />
                     </div>
                     <button class="btn">Calcular edad</button>
                 </form>

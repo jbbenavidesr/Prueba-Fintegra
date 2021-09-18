@@ -1,11 +1,12 @@
 // Plugins
 import { terser } from "rollup-plugin-terser";
 import pkg from "./package.json";
+import babel from "@rollup/plugin-babel";
 
 // Configs
 let configs = {
     name: "PruebaFintegra",
-    files: ["main.js"],
+    files: ["main.js", "index.js"],
     formats: ["iife"],
     default: "iife",
     pathIn: "src/js",
@@ -69,9 +70,18 @@ let createOutputs = function (filename) {
 let createExport = function (file) {
     return configs.files.map(function (file) {
         let filename = file.replace(".js", "");
+        let plugins = [];
+        if (filename === "index") {
+            plugins.push(
+                babel({
+                    presets: ["@babel/preset-react"],
+                })
+            );
+        }
         return {
             input: `${configs.pathIn}/${file}`,
             output: createOutputs(filename),
+            plugins,
         };
     });
 };

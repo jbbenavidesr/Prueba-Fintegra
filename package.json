@@ -26,6 +26,9 @@
     },
     "homepage": "https://github.com/jbbenavidesr/Prueba-Fintegra#readme",
     "devDependencies": {
+        "@babel/preset-react": "^7.14.5",
+        "@rollup/plugin-babel": "^5.3.0",
+        "babel": "^6.23.0",
         "browser-sync": "^2.27.5",
         "chokidar-cli": "^3.0.0",
         "npm-run-all": "^4.1.5",

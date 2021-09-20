@@ -8,7 +8,7 @@ class AgePredictor extends React.Component {
         this.state = {
             nameList: [],
             country: "",
-            result: {},
+            result: false,
             isLoading: false,
         };
 
@@ -19,7 +19,7 @@ class AgePredictor extends React.Component {
     changeHandler(event) {
         let { value, name } = event.target;
         if (name === "nameList") {
-            value = value.split(", ").map(function (name) {
+            value = value.split(",").map(function (name) {
                 return name.trim();
             });
         }
@@ -31,18 +31,17 @@ class AgePredictor extends React.Component {
     submitHandler(event) {
         event.preventDefault();
 
-        let { state, setState } = this;
-
-        setState({
+        this.setState({
             isLoading: true,
+            result: true,
         });
 
-        let country = countries.find(function (item) {
-            return state.country === item.Country;
+        let country = countries.find((item) => {
+            return this.state.country === item.Country;
         })?.ISOCode;
 
         let query = buildQueryString({
-            names: state.nameList,
+            names: this.state.nameList,
             country,
         });
 
@@ -51,9 +50,10 @@ class AgePredictor extends React.Component {
                 if (!response.ok) throw response;
                 return response.json();
             })
-            .then(function (result) {
-                setState({
+            .then((result) => {
+                this.setState({
                     result,
+                    isLoading: false,
                 });
             })
             .catch(function (error) {
@@ -75,7 +75,7 @@ class AgePredictor extends React.Component {
                                 type="text"
                                 name="nameList"
                                 id="names"
-                                value={this.state.nameList.join(", ")}
+                                value={this.state.nameList.join(",")}
                             />
                         </div>
                         <div>
@@ -92,9 +92,17 @@ class AgePredictor extends React.Component {
                     </form>
                     <hr />
                 </div>
-                <div className="wrapper">
-                    <AgeResult result={this.state.result} />
-                </div>
+                {this.state.result ? (
+                    <div className="wrapper">
+                        {this.state.isLoading ? (
+                            <p>Calculando la edad...</p>
+                        ) : (
+                            <AgeResult result={this.state.result} />
+                        )}
+                    </div>
+                ) : (
+                    ""
+                )}
             </main>
         );
     }

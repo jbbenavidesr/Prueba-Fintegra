@@ -3,7 +3,7 @@ function Header() {
         <header>
             <div className="wrapper">
                 <h1>
-                    <a href="/age-predictor/"> Predictor de edad</a>
+                    <a href="/react-age-predictor/"> Predictor de edad</a>
                 </h1>
                 <p>
                     Está es una pequeña aplicación para predecir la edad de una
